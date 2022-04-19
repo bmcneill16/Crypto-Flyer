@@ -18,11 +18,16 @@ public class CollisionDetector : MonoBehaviour
         
     }
 
+   
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
-        Destroy(collision.gameObject);
-        spawner.GameOver();
-        Debug.Log("Gameover!");
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+            spawner.GameOver();
+            Debug.Log("Gameover!");
+        }
     }
 }
