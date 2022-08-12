@@ -15,7 +15,7 @@ public class MainMainController : MonoBehaviour
 
     public void options()
     {
-
+        SceneManager.LoadScene("Options");
     }
 
     public void exitGame()

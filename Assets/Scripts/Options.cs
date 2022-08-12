@@ -10,17 +10,15 @@ public class Options : MonoBehaviour
 {
 
     public List<AudioSource> musicChoices;
-    public TMP_Dropdown musicChoice;   
+    public TMP_Dropdown musicChoice;
+    
     
     // Start is called before the first frame update
     void Start()
     {
-        //musicChoice = GetComponent<TMP_Dropdown>();
-        musicChoices[0].Stop();
+        musicChoices[0].Stop(); //Used to stop the music from playing upon opening the scene. 
         musicChoices[1].Stop();
-        musicChoices[2].Stop();
-        
-        
+        musicChoices[2].Stop(); 
     }
 
     // Update is called once per frame
