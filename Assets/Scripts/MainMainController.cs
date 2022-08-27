@@ -4,13 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMainController : MonoBehaviour
 {
-    
+    private MainManager mainManager;
 
     public void playGame()
     {
-        
         SceneManager.LoadScene("GameScene");
-        
+        mainManager = MainManager.instance;
     }
 
     public void options()
@@ -25,7 +24,7 @@ public class MainMainController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         
     }
 
