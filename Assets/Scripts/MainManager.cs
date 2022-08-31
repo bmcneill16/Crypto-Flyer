@@ -9,6 +9,7 @@ public class MainManager : MonoBehaviour
     public static MainManager instance;
     public AudioSource audioSource;
     public List<AudioSource> musicChoices;
+    public float bestScore = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,17 +39,28 @@ public class MainManager : MonoBehaviour
     [Serializable]
     class SaveData
     {
-        public float score;
+        public float bestScore;
     }
         
 
     public void SaveScore()
     {
+        SaveData data = new SaveData();
+        data.bestScore = bestScore;
 
+        string jsonScore = JsonUtility.ToJson(data);
+        File.WriteAllText(Application.persistentDataPath + " /savefile.json", jsonScore);
     }
 
     public void LoadScore()
     {
+        string path = Application.persistentDataPath + " /savefile.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(path);
 
+            bestScore = data.bestScore;
+        }
     }
 }

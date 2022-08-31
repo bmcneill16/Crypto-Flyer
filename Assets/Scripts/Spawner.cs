@@ -12,25 +12,16 @@ public class Spawner : MonoBehaviour
     public GameObject gameOverScreen;
     public TextMeshProUGUI scoreText;
     private OffsetScrolling offsetScrolling;
-    //private AudioSource sound;
-    //public AudioClip backgroundMusic;
     private float score;
-    //public float height;
     private float spawnRangeX = 14f;
     private float spawnRangeY = 5f;
     private float queueTime = 1.7f;
     private float time = 0;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
-
         offsetScrolling = GameObject.Find("Space").GetComponent<OffsetScrolling>();
-        //sound = GetComponent<AudioSource>();
-        //sound.Play();
-
     }
 
     // Update is called once per frame
@@ -55,6 +46,18 @@ public class Spawner : MonoBehaviour
             }
 
         }
+
+        if (MainManager.instance.bestScore == 0)
+        {
+            MainManager.instance.bestScore = score;
+            MainManager.instance.SaveScore();
+        }
+        else if (MainManager.instance.bestScore < score)
+        {
+            MainManager.instance.bestScore = score;
+            MainManager.instance.SaveScore();
+        }
+
 
     }
 

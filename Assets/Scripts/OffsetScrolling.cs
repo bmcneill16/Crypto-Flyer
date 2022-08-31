@@ -7,7 +7,6 @@ public class OffsetScrolling : MonoBehaviour
     
     private Renderer renderer;
     private Spawner spawner;
-    private AudioSource backgroundMusic;
     public float scrollSpeed;
     public bool isGameActive;
     // Start is called before the first frame update
@@ -15,7 +14,6 @@ public class OffsetScrolling : MonoBehaviour
     {
         renderer = GetComponent<Renderer>();
         spawner = GameObject.Find("Obstacle Spawner").GetComponent<Spawner>();
-        backgroundMusic = GetComponent<AudioSource>();
         StartGame();
     }
 
@@ -31,7 +29,5 @@ public class OffsetScrolling : MonoBehaviour
     {
         isGameActive = true;
         spawner.StartCoroutine(spawner.SpawnStones());
-        backgroundMusic.Play();
-
     }
 }
