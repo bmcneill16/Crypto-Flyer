@@ -1371,7 +1371,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7abb1e2f0a7cd2a4499882adf2df50a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
 --- !u!1 &1765548669
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,7 +1730,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.3019608, g: 0.27450982, b: 0.27450982, a: 1}
-    m_HighlightedColor: {r: 0.7075472, g: 0.6634924, b: 0.6634924, a: 1}
+    m_HighlightedColor: {r: 0.17254902, g: 0.08235294, b: 0.20784314, a: 1}
     m_PressedColor: {r: 0.5377358, g: 0.48396224, b: 0.48396224, a: 1}
     m_SelectedColor: {r: 0.6792453, g: 0.6113208, b: 0.6113208, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}

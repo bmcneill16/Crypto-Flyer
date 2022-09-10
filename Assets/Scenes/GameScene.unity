@@ -1135,6 +1135,7 @@ MonoBehaviour:
   - {fileID: 6092918370670041451, guid: 9701ceb93a1c17246bf7b2ed4757ee72, type: 3}
   gameOverScreen: {fileID: 1774142892}
   scoreText: {fileID: 473286489}
+  highScoreText: {fileID: 1849446593}
 --- !u!4 &823877957
 Transform:
   m_ObjectHideFlags: 0

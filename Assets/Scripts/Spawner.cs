@@ -11,6 +11,7 @@ public class Spawner : MonoBehaviour
     public GameObject[] stonesPrefab;
     public GameObject gameOverScreen;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI highScoreText;
     private OffsetScrolling offsetScrolling;
     private float score;
     private float spawnRangeX = 14f;
@@ -22,6 +23,10 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         offsetScrolling = GameObject.Find("Space").GetComponent<OffsetScrolling>();
+        MainManager.instance.LoadScore();
+
+        DisplayBestScore();
+
     }
 
     // Update is called once per frame
@@ -96,5 +101,8 @@ public class Spawner : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-
+    public void DisplayBestScore()
+    {
+        highScoreText.SetText("Highscore: " + MainManager.instance.bestScore);
+    }
 }
