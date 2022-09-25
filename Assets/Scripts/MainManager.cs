@@ -10,10 +10,11 @@ public class MainManager : MonoBehaviour
     public AudioSource audioSource;
     public List<AudioSource> musicChoices;
     public float bestScore = 0;
+    public Options options;
     // Start is called before the first frame update
     void Start()
     {
-        musicChoices[0].Stop(); //Used to stop the music from playing upon opening the scene. 
+        musicChoices[0].Play(); //Used to stop the music from playing upon opening the scene. 
         musicChoices[1].Stop();
         musicChoices[2].Stop();
 
@@ -24,10 +25,9 @@ public class MainManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-
         DontDestroyOnLoad(gameObject); //Used to transfer over saved data, as well as music selection.
-       
+
+        
     }
 
     // Update is called once per frame

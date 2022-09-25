@@ -103,6 +103,6 @@ public class Spawner : MonoBehaviour
 
     public void DisplayBestScore()
     {
-        highScoreText.SetText("Highscore: " + MainManager.instance.bestScore);
+        highScoreText.SetText("Highscore: " + Mathf.Round(MainManager.instance.bestScore));
     }
 }

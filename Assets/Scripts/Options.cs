@@ -9,7 +9,7 @@ using TMPro;
 
 public class Options : MonoBehaviour
 {
-
+    public static Options instance;
     public TMP_Dropdown musicChoice;
     public MainManager mainManager;
     
@@ -29,6 +29,7 @@ public class Options : MonoBehaviour
 
     public void SelectMusic()
     {
+
         if (musicChoice.value == 0)//determines the choice from the dropdown items
         {
             mainManager.audioSource = mainManager.musicChoices[0];//Carry over the selected track into the MainManager script, so it can be used in other scenes
@@ -50,7 +51,10 @@ public class Options : MonoBehaviour
             mainManager.musicChoices[0].Stop();
             mainManager.musicChoices[1].Stop();
         }
+        
     }
+
+
 
     public void ReturnToMainMenu()
     {
