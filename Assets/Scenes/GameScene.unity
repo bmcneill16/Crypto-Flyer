@@ -1134,6 +1134,7 @@ MonoBehaviour:
   - {fileID: 4541944145419613584, guid: b00e074e39bbd4f46bec02b5171b9411, type: 3}
   - {fileID: 6092918370670041451, guid: 9701ceb93a1c17246bf7b2ed4757ee72, type: 3}
   gameOverScreen: {fileID: 1774142892}
+  adDisplayObject: {fileID: 1930076035}
   scoreText: {fileID: 473286489}
   highScoreText: {fileID: 1849446593}
 --- !u!4 &823877957
@@ -2096,6 +2097,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849446591}
   m_CullTransparentMesh: 1
+--- !u!1 &1930076035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1930076037}
+  - component: {fileID: 1930076036}
+  m_Layer: 0
+  m_Name: AdDisplayObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1930076036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930076035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 808c64b0872a82843a0b9444f3cf01b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myGameIdAndroid: 4945086
+  myGameIdIOS: 4945087
+  myAdUnitIdAndroid: Interstitial_Android
+  myAdUnitIdIOS: Interstitial_iOS
+  myAdUnitId: 
+  adStarted: 0
+--- !u!4 &1930076037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930076035}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1940.5, y: 1356.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2000524752
 GameObject:
   m_ObjectHideFlags: 0

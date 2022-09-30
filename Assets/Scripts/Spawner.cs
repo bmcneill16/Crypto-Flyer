@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour
 
     public GameObject[] stonesPrefab;
     public GameObject gameOverScreen;
+    public GameObject adDisplayObject;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
     private OffsetScrolling offsetScrolling;
@@ -22,6 +23,8 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        adDisplayObject.SetActive(false);
+       
         offsetScrolling = GameObject.Find("Space").GetComponent<OffsetScrolling>();
         MainManager.instance.LoadScore();
 
@@ -49,7 +52,6 @@ public class Spawner : MonoBehaviour
             {
                 queueTime = .4f;
             }
-
         }
 
         if (MainManager.instance.bestScore == 0)
@@ -62,14 +64,10 @@ public class Spawner : MonoBehaviour
             MainManager.instance.bestScore = score;
             MainManager.instance.SaveScore();
         }
-
-
     }
-
 
     public IEnumerator SpawnStones()
     {
-
         while (offsetScrolling.isGameActive)
         {
             yield return new WaitForSeconds(queueTime);
@@ -84,6 +82,7 @@ public class Spawner : MonoBehaviour
     {
         offsetScrolling.isGameActive = false;
         gameOverScreen.SetActive(true);
+        adDisplayObject.SetActive(true);
     }
 
     public void Restart()
