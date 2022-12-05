@@ -18,23 +18,23 @@ public class AdDisplay : MonoBehaviour, IUnityAdsInitializationListener
 
     public void OnInitializationComplete()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Unity Ads initialization complete.");
     }
 
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)
     {
-        throw new System.NotImplementedException();
+        Debug.Log($"Unity Ads Initialization Failed: {error.ToString()} - {message}");
     }
 
     void Start() 
     {
 #if UNITY_IOS
-            Advertisement.Intialize(myGameIDIOS, testMode);
+            Advertisement.Initialize(myGameIdIOS, testMode, this);
             myAdUnitId = myAdUnitIdIOS;
 #else
-        Advertisement.Initialize(myGameIdAndroid, testMode);
+        Advertisement.Initialize(myGameIdAndroid, testMode, this);
             myAdUnitId = myAdUnitIdAndroid;
-        #endif
+#endif
     }
 
     // Update is called once per frame
@@ -46,7 +46,6 @@ public class AdDisplay : MonoBehaviour, IUnityAdsInitializationListener
             Advertisement.Show(myAdUnitId);
             adStarted = true;
         }
-        
  
     }
 }
